@@ -1,0 +1,326 @@
+
+
+/*-- -------------------------- -->
+<---          Landing           -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0px) {
+
+    #hero {
+        height: auto;
+        background: url("/images/header.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position: relative;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    
+    #dark {
+        position: absolute;
+        background: hsl(226, 72%, 7%);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: .7;
+        z-index: 0;
+    }
+    
+    .heroText {
+        max-width: 400px;
+        margin: auto;
+        margin-top: 00px;
+    }
+    
+    .hero-content {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    
+    #home-h {
+        color: #fff;
+        font-size: 1.7em;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .heroText h2 {
+        color: #fff;
+        font-size: 1em;
+        font-weight: normal;
+        text-align: center;
+    }
+    
+    #home-p {
+        color: #fff;
+        font-size: 1em;
+        font-weight: normal;
+        width: 100%;
+        line-height: 1.6em;
+        text-align: center;
+    }
+    
+    .heroText button {
+        width: 100%;
+        height: 55px;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .heroText a {
+        display: block;
+        width: 200px;
+        margin: auto;
+    }
+    
+    .heroText .button-solid {
+        margin-bottom: 10px;
+    }
+
+    .heroText .button-transparent {
+        border: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .heroText {
+        margin-top: 100px;
+        max-width: 570px;
+    }
+
+    #home-h {
+        font-size: 3em;
+    }
+
+    .heroText h2 {
+        width: 500px;
+        margin: auto;
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #hero .container {
+        max-width: 800px;
+    }
+
+    #hero {
+        background-attachment: fixed;
+        min-height: 100vh; /* makes this section as tall as whatever the screen is */
+    }
+
+    .heroText {
+        margin-top: 250px;
+        margin-left: 0;
+        max-width: 600px;
+    }
+
+    #home-h {
+        text-align: left;
+        font-size: 45px;
+    }
+
+    .heroText h2 {
+        text-align: left;
+        line-height: 1.7em;
+        width: 400px;
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    .heroText a {
+        display: inline-block;
+    }
+
+    .heroText .button-solid {
+        margin-right: 20px;
+    }
+
+    .heroText .button-transparent {
+        border: none;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+
+    #hero .container {
+        max-width: 1200px;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Process           -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0px) {
+
+    .steps-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .step-card {
+        text-align: center;
+        max-width: 300px;
+        padding: 20px;
+        margin-bottom: 50px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .step-card-number {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        padding: 10px;
+        background-color: var(--secondary);
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+    }
+
+    .step-card img {
+        max-width: 60px;
+        height: auto;
+        padding: 7px;
+    }
+
+    .img-border {
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 100px;
+        border: 3px solid rgba(0, 0, 0, 10%);
+        max-width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .step-card h3 {
+        color: var(--subtitle-dark);
+    }
+
+    .step-card p {
+        color: var(--paragraph-dark);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1300px) {
+
+}
+
+/*-- -------------------------- -->
+<---          Features          -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0px) {
+    
+    #features {
+        background-color: var(--blue-section);
+    }
+
+    #features h2 {
+        color: white;
+    }
+
+    .feature-card {
+        margin-bottom: 60px;
+    }
+
+    .feature-card img {
+        max-width: 50px;
+        margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+        color: white;
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .feature-card h3::after {
+        background-color: var(--primary);
+        height: 5px;
+        width: 60px;
+        position: absolute;
+        bottom: -22.5px;
+        left: 0;
+        content: "";
+    }
+
+    .feature-card p {
+        color: var(--paragraph-light);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1300px) {
+
+}
+
+/*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 1300px) {
+
+}
