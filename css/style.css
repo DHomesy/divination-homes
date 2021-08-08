@@ -8,7 +8,7 @@
 
     #hero {
         height: auto;
-        background: url("/images/header.jpg");
+        background: url("../images/header.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
