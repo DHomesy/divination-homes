@@ -54,7 +54,7 @@
         <!-- Mobile Nav Strip -->
         <div class="mobile-wrapper">
             <div class="mobile-nav container mobile-nav-container">
-                <img id="mobile-logo" src="/images/logo.png" alt="mobile_company_logo" height="60">
+                <img id="mobile-logo" src="./images/logo-2.png" alt="mobile_company_logo" height="80">
 
                 <!-- Hamburger Menu -->
                 <button aria-label="open the menu" id="menu-button" class="hamburger hamburger--spring" onclick="toggleNav()" type="button">
@@ -72,7 +72,7 @@
         <nav>
             <div class="navbar-menu">
                 <div id="side-menu" class=" side-nav">
-                    <img aria-hidden="true" src="images/logo.png" alt="compnay logo" height="80">
+                    <img aria-hidden="true" src="./images/logo.png" alt="compnay logo" height="80">
                     <ul id="on-top" class="navbar-links">
                         <li class="nav-li"><a class="active-menu" href="index.html">Home</a></li>
                         <li class="nav-li"><a href="index.html#about-diamond">About</a></li>
@@ -109,56 +109,34 @@
         <!--                  Process                     -->
         <!-- ============================================ -->
 
-        <section id="services">
+        <section id="action">
             <div class="container">
-                <h2 class="section-title">The Process</h2>
                 <!-- Content -->
-                <div class="steps-container">
-                    <div class="step-card">
-                        <span class="step-card-number">1</span>
-                        <div class="img-border">
-                            <img src="images/icons/home.svg" alt="">
-                        </div>
-                        <h3>Quick Information</h3>
-                        <p>
-                            Tell us some quick information and we’ll call you in 24 hours to schedule a home walkthrough.
-                        </p>
-                    </div>
-                    <div class="step-card">
-                        <span class="step-card-number">2</span>
-                        <div class="img-border">
-                            <img src="images/icons/running.svg" alt="">
-                        </div>
-                        <h3>In-Home Walkthrough</h3>
-                        <p>
-                            We’ll talk in person, assess your home and identify anything else you may need.
-                        </p>
-                    </div>
-                    <div class="step-card">
-                        <span class="step-card-number">3</span>
-                        <div class="img-border">
-                            <img src="images/icons/analytics.svg" alt="">
-                        </div>
-                        <h3>Get a Cash Offer</h3>
-                        <p>
-                            After a home walkthrough we’ll evaluate your home and give you the best cash offer we can.
-                        </p>
-                    </div>
-                    <div class="step-card">
-                        <span class="step-card-number">4</span>
-                        <div class="img-border">
-                            <img src="images/icons/money.svg" alt="">
-                        </div>
-                        <h3>Get Paid in Cash</h3>
-                        <p>
-                            Get the cash you need for your home in as little as 10 days. We will work around your schedule.
-                        </p>
+                <div class="two-col-container">
+                    <form action="">
+                        <h2 class="form-title">Allow us to help</h2>
+                        <p class="form-subtitle">Reach out to us and we’ll contact you within 24 hours with a solution for your home.</p>
+                        <label for="">Property address</label>
+                        <input type="text">
+                        <label for="">Name</label>
+                        <!-- <input type="text">
+                        <label for="">Email</label> -->
+                        <input type="email">
+                        <label for="">Phone</label>
+                        <input type="tel">
+                        <button class="button-solid">Submit</button>
+                    </form>
+                    <div class="action-content-container">
+                        <h2>Fuck forclosure, we have solutions</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, cumque architecto repellat, totam nam id expedita dignissimos rem quas placeat rerum! Fuga expedita deserunt odit maiores quos nobis laboriosam ratione.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, cumque architecto repellat.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, cumque architecto repellat.</p>
                     </div>
                 </div>
                 <!-- Content end -->
             </div>
             <div class="section-image">
-                <img src="" alt="">
+                <img src="images/houses.svg" alt="">
             </div>
         </section>
 
@@ -220,32 +198,23 @@
         </section>
 
         <!-- ============================================ -->
-        <!--                  Contact                     -->
+        <!--                  values                     -->
         <!-- ============================================ -->
 
-        <section id="contact">
-            <div class="container">
-                <div>
-                    <h2 class="section-title">Contact Us</h2>
-                    <span class="divider"></span>
-                    <h3>Please leave us your information and We’ll get back to you within 24 hours.</h3>
-                    <form action="">
-                        <label for=""></label>
-                        <input type="text">
-                        <label for=""></label>
-                        <input type="text">
-                        <label for=""></label>
-                        <input type="email">
-                        <label for=""></label>
-                        <input type="phone">
-                    </form>
-                </div>
-                <!-- Content -->
-                
-                <!-- Content end -->
+        <section id="values">
+            <div class="container values-container">
+               <img class="side-image" src="https://c8.alamy.com/comp/FBAMX7/view-of-a-young-attractive-people-meeting-real-estate-agent-at-the-FBAMX7.jpg" alt="">
+               <div class="values-content">
+                   <h2>Here are our values</h2>
+                   <ul>
+                       <li>We like to help people who are undergoing forclosure.</li>
+                       <li>Train by day, Joe Rogan podcast by night, all day.</li>
+                       <li>Sometimes we'll think about donating to charity.</li>
+                   </ul>
+               </div>
             </div>
             <div class="section-image">
-                <img src="" alt="">
+                <img src="images/houston.svg" alt="">
             </div>
         </section>
         
@@ -289,6 +258,6 @@
         }
     </script>
 
-    <script defer src="/app.js"></script>
+    <script defer src="app.js"></script>
 </body>
 </html>
