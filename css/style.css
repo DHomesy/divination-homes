@@ -178,7 +178,8 @@
 
     #action {
         position: relative;
-        padding-bottom: 180px;
+        padding-bottom: 200px;
+        border-bottom: 8px solid var(--primary);
     }
 
     .two-col-container {
