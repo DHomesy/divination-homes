@@ -194,9 +194,14 @@
         position: absolute;
         bottom: -5px;
         left: -450px;
-        min-width: 1200px;
+        width: 100%;
         height: auto;
         z-index: -1;
+    }
+
+    .section-image img {
+        width: 1200px;
+        overflow-x: hidden;
     }
 
     /* FORM */
@@ -266,12 +271,42 @@
     }
 
     .action-content-container p:not(:last-child) {
-        margin-bottom: 18px;
+        margin-bottom: 30px;
     }
 }
 
 @media only screen and (min-width: 768px) {
 
+    .two-col-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    form {
+        flex: 50%;
+    }
+
+    .action-content-container {
+        flex: 50%;
+    }
+
+    .action-content-container p {
+        margin-bottom: 0px;
+    }
+
+    .section-image {
+        position: absolute;
+        bottom: -5px;
+        left: 0px;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+    }
+
+    .section-image img {
+        width: 100%;
+        overflow-x: hidden;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -294,6 +329,7 @@
 
     #features h2 {
         color: white;
+        text-align: left;
     }
 
     .feature-card {
@@ -301,7 +337,7 @@
     }
 
     .feature-card img {
-        max-width: 50px;
+        max-width: 45px;
         margin-bottom: 20px;
     }
 
@@ -328,10 +364,35 @@
 
 @media only screen and (min-width: 768px) {
 
+    .features-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .feature-card {
+        flex: 50%;
+        max-width: 450px;
+    }
+
+    .feature-card:nth-child(even) {
+        padding-left: 20px;
+    }
+
+    .feature-card:nth-child(odd) {
+        padding-right: 20px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
 
+    .feature-card:nth-child(even) {
+        padding-left: 0;
+    }
+
+    .feature-card:nth-child(odd) {
+        padding-right: 0;
+    }
 }
 
 @media only screen and (min-width: 1300px) {
@@ -346,7 +407,7 @@
 
     #values {
         position: relative;
-        padding-bottom: 180px;
+        padding-bottom: 200px;
     }
 
     .values-container {
@@ -386,15 +447,33 @@
     }
 
     .values-container ul {
-        padding-left: 20px;
+        padding-left: 0px;
         color: var(--paragraph-dark);
+        list-style: none;
     }
 
-    .values-container ul li {color: var(--paragraph-dark);}
+    .values-container ul li {
+        color: var(--paragraph-dark);
+        margin-bottom: 30px;
+    }
+
+    .values-container ul li::before {
+        content: "\276F";
+        color: var(--primary);
+        margin-right: 10px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
 
+    .values-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .side-image {
+        width: 50%;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
