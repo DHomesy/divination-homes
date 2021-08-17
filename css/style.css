@@ -229,7 +229,7 @@
     }
 
     input {
-        height: 35px;
+        height: 40px;
         width: 100%;
         margin-bottom: 25px;
         border: none;
@@ -243,13 +243,22 @@
         margin-bottom: 40px;
     }
 
-    button {
+    .form-btn-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    form .button-solid {
         border: none;
-        display: inline-block;
-        margin-left: auto;
+        margin: 0;
+        width: 200px;
     }
 
     /* CONTENT */
+
+    .action-content-container {
+        position: relative;
+    }
 
     .action-content-container h2 {
         position: relative;
@@ -273,6 +282,13 @@
     .action-content-container p:not(:last-child) {
         margin-bottom: 30px;
     }
+
+    .cloud-image {
+        position: absolute;
+        width: 70px;
+        right: 40px;
+        bottom: -55px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -294,6 +310,11 @@
         margin-bottom: 0px;
     }
 
+    .cloud-image {
+        bottom: -20px;
+        right: 70px;
+    }
+
     .section-image {
         position: absolute;
         bottom: -5px;
@@ -311,10 +332,20 @@
 
 @media only screen and (min-width: 1024px) {
 
+    .cloud-image {
+        bottom: 70px;
+        right: 80px;
+        width: 85px;
+    }
 }
 
 @media only screen and (min-width: 1300px) {
 
+    .cloud-image {
+        bottom: 80px;
+        right: 50px;
+        width: 100px;
+    }
 }
 
 /*-- -------------------------- -->
