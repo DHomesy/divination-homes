@@ -438,7 +438,7 @@
 
     #values {
         position: relative;
-        padding-bottom: 200px;
+        padding-bottom: 180px;
     }
 
     .values-container {
@@ -513,4 +513,7 @@
 
 @media only screen and (min-width: 1300px) {
 
+    #values {
+        padding-bottom: 300px;
+    }
 }

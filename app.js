@@ -440,11 +440,11 @@ darkModeToggle.addEventListener('click', () => {
 // of "footer .dark-mode-button" so you can have two buttons that toggle dark mode.
 // This second function is for the footer dark mode button to toggle dark mode in 
 // localstorage
-darkModeToggleFooter.addEventListener('click', () => {
-  darkMode = localStorage.getItem("darkMode");
-  if (darkMode !== "enabled") {
-    enableDarkMode();
-  } else {
-    disableDarkMode();
-  }
-})
+// darkModeToggleFooter.addEventListener('click', () => {
+//   darkMode = localStorage.getItem("darkMode");
+//   if (darkMode !== "enabled") {
+//     enableDarkMode();
+//   } else {
+//     disableDarkMode();
+//   }
+// })
