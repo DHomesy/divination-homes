@@ -111,17 +111,15 @@
             <div class="container">
                 <!-- Content -->
                 <div class="two-col-container">
-                    <form action="">
+                    <form id="contact-form" action="">
                         <h2 class="form-title">Allow us to help</h2>
                         <p class="form-subtitle">Reach out to us and we’ll contact you within 24 hours with a solution for your home.</p>
                         <label for="">Property address</label>
-                        <input type="text">
+                            <input name="property_address" type="text">
                         <label for="">Name</label>
-                        <!-- <input type="text">
-                        <label for="">Email</label> -->
-                        <input type="email">
+                            <input name="name" type="text">
                         <label for="">Phone</label>
-                        <input type="tel">
+                            <input name="phone_number" type="tel">
                         <div class="form-btn-container">
                             <button class="button-solid">Submit</button>
                         </div>
@@ -167,7 +165,7 @@
                         <h3>Versatility</h3>
                         <span class="divider"></span>
                         <p>
-                            Got any other problems between you and getting a new home? Maybe we can help out. Let's discuss and perhaps we can find a solution to any other problems you are having.
+                            Do you have any other problems between you and getting a new home? Maybe we can help out. Let's discuss and perhaps we can find a solution to any other problems you are having.
                         </p>
                     </div>
                     <div class="feature-card">
@@ -203,7 +201,7 @@
             <div class="container values-container">
                <img class="side-image" src="images/Values_handshake.jpg" alt="">
                <div class="values-content">
-                   <h2>We value you.</h2>
+                   <h2>We Value You.</h2>
                    <ul>
                        <li>Hundreds of thousands of US citizens go into foreclosure each year. You are not alone. We aim to put an end to those numbers and help people out of a rough situation.</li>
                        <li>Foreclosures are a rough journey that lasts years to come. We aim to get people back on their feet and prevent the dreadful process.</li>
@@ -224,9 +222,6 @@
 
     <footer id="footer">
         <a class="footer-logo" aria-label="business logo" href="index.html"><img aria-hidden="true" src="images/logo-2.png" alt="company logo"></a>
-        <div class="contact-group">
-            <a class="phone" href="tel:555-555-1123">555.555.1123</a><span>Somewhere, Out There</span><a href="example@email.com">example@email.com</a>
-        </div>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="index.html#action">Contact</a></li>
@@ -252,6 +247,31 @@
         if(b == "MSIE" || b == "Trident" || b == "Edge"){
             b = "Internet Explorer";
             alert("You are using the " + b + " browser and this browser is incompatible with this website and many others.  Please open this page in a different browser, either Chrome or Firefox.  Thank you!");
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">
+        (function(){
+        emailjs.init("user_Cke2WfN1vnBV6KeoqZd6D");})();
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // these IDs from the previous steps
+                emailjs.sendForm('service_mp1vxlq', 'template_a69kqw4', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
         }
     </script>
 
