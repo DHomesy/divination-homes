@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="canonical" href="">
+    <link rel="shortcut icon" href="images/logo-2.png">
 
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -41,8 +42,6 @@
 </head>
 <body>
 
-    <a class="skip" aria-label="skip to main content" href="index.html#main">Click To Skip To Main</a>
-
     <header>
 
         <button class="dark-mode-button top-dark-mode-button" aria-label="dark mode toggle">
@@ -72,7 +71,10 @@
         <nav>
             <div class="navbar-menu">
                 <div id="side-menu" class=" side-nav">
-                    <img aria-hidden="true" src="./images/logo.png" alt="company logo" height="80">
+                    <div>
+                        <img aria-hidden="true" src="./images/logo.png" alt="company logo" height="80">
+                        <span>Call now: (832) 910 9855</span>
+                    </div>
                     <ul id="on-top" class="navbar-links">
                         <li class="nav-li"><a class="active-menu" href="index.html">Home</a></li>
                         <li class="nav-li"><a href="index.html#action">Contact</a></li>
@@ -111,7 +113,7 @@
             <div class="container">
                 <!-- Content -->
                 <div class="two-col-container">
-                    <form id="contact-form" action="">
+                    <form id="contact-form" action="http://localhost:3000/contact">
                         <h2 class="form-title">Allow us to help</h2>
                         <p class="form-subtitle">Reach out to us. We have people on standby to respond to your request, we'll get back to you ASAP.</p>
                         <label for="">Property address</label>
@@ -120,8 +122,6 @@
                             <input name="name" type="text">
                         <label for="">Phone</label>
                             <input name="phone_number" type="tel">
-                        <label for="">Preferred contact method</label>
-                            <input name="contact_preference" type="text">
                         <div class="form-btn-container">
                             <button class="button-solid">Submit</button>
                         </div>
@@ -223,6 +223,7 @@
 
     <footer id="footer">
         <a class="footer-logo" aria-label="business logo" href="index.html"><img aria-hidden="true" src="images/logo-2.png" alt="company logo"></a>
+        <span class="call-now-text">Call Now: (832) 910-9855</span>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="index.html#action">Contact</a></li>
@@ -253,27 +254,6 @@
 
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
-    </script>
-
-    <script type="text/javascript">
-        (function(){
-        emailjs.init("user_Cke2WfN1vnBV6KeoqZd6D");})();
-    </script>
-
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                // these IDs from the previous steps
-                emailjs.sendForm('service_mp1vxlq', 'template_a69kqw4', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
     </script>
 
     <script defer src="app.js"></script>

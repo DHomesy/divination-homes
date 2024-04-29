@@ -6,6 +6,37 @@ $hamburger.on("click", function (e) {
     // Do something else, like open/close menu
 });
 
+// form submission logic
+$(document).ready(function () {
+  $('#contact-form').on('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      var url = $(this).attr('action'); // Get the action attribute from the form element
+      var formData = $(this).serializeArray(); // Serialize the form data for sending
+
+      // Adding the extra data to the formData array
+      formData.push({name: 'appSecret', value: 'itsnotmuchofasecretandhopefullyyouhaventguesseditbutthisismysecret'});
+
+      // Convert the formData array to an object suitable for $.ajax
+      var dataObject = {};
+      $.each(formData, function (index, obj) {
+          dataObject[obj.name] = obj.value;
+      });
+
+      $.ajax({
+          type: 'POST',
+          url: url,
+          data: formData,
+          success: function (data) {
+              console.log('Success:', data);
+          },
+          error: function (xhr, status, error) {
+              console.error('Error:', error);
+          }
+      });
+  });
+});
+
 /* Code for the toggling of the navbar */
 
 let toggleNavStatus = false;
