@@ -2,38 +2,82 @@
 
 var $hamburger = $(".hamburger");
 $hamburger.on("click", function (e) {
-    $hamburger.toggleClass("is-active");
-    // Do something else, like open/close menu
+  $hamburger.toggleClass("is-active");
+  // Do something else, like open/close menu
 });
 
 // form submission logic
 $(document).ready(function () {
   $('#contact-form').on('submit', function (event) {
+    // Check if the form is valid
+    if (!this.checkValidity()) {
       event.preventDefault(); // Prevent the default form submission
+      $(this).find(':submit').click(); // Trigger HTML5 validation
+      return;
+    }
 
-      var url = $(this).attr('action'); // Get the action attribute from the form element
-      var formData = $(this).serializeArray(); // Serialize the form data for sending
+    // Custom validation
+    var name = $(this).find('[name="name"]').val();
+    var propertyAddress = $(this).find('[name="property_address"]').val();
+    var phoneNumber = $(this).find('[name="phone_number"]').val();
 
-      // Adding the extra data to the formData array
-      formData.push({name: 'appSecret', value: 'itsnotmuchofasecretandhopefullyyouhaventguesseditbutthisismysecret'});
+    var nameRegex = /^[A-Za-z\s]+$/;
+    var propertyAddressRegex = /^[A-Za-z0-9\s]+$/;
+    var phoneNumberRegex = /^\d+$/;
 
-      // Convert the formData array to an object suitable for $.ajax
-      var dataObject = {};
-      $.each(formData, function (index, obj) {
-          dataObject[obj.name] = obj.value;
-      });
+    var isValid = true;
+    var errorMessage = '';
+    if (!nameRegex.test(name) || name == '') {
+      isValid = false;
+      errorMessage = "Please provide your name in the contact form."
+    }
+    if (!propertyAddressRegex.test(propertyAddress) || propertyAddress == '') {
+      isValid = false;
+      errorMessage = "Please provide your property address in the contact form."
+    }
 
-      $.ajax({
-          type: 'POST',
-          url: url,
-          data: formData,
-          success: function (data) {
-              console.log('Success:', data);
-          },
-          error: function (xhr, status, error) {
-              console.error('Error:', error);
-          }
-      });
+    if (!phoneNumberRegex.test(phoneNumber) || phoneNumber == '') {
+      isValid = false;
+      errorMessage = "Please provide your phone number in the contact form. Please use numbers only"
+    }
+
+    if (!isValid) {
+      event.preventDefault(); // Prevent the default form submission
+      alert(errorMessage);
+      return;
+    }
+
+    var url = $(this).attr('action'); // Get the action attribute from the form element
+    var formData = $(this).serializeArray(); // Serialize the form data for sending
+
+    // Adding the extra data to the formData array
+    formData.push({name: 'appSecret', value: 'itsnotmuchofasecretandhopefullyyouhaventguesseditbutthisismysecret'});
+
+    // Convert the formData array to an object suitable for $.ajax
+    var dataObject = {};
+    $.each(formData, function (index, obj) {
+      dataObject[obj.name] = obj.value;
+    });
+
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: formData,
+      success: function () {
+        // Clear form fields
+        $('#contact-form').trigger('reset');
+        // Display confirmation message
+        $('#contact-form').append('<p class="confirmation-message">Submit Complete! Thanks for giving us the opportunity to help! We will be in touch very soon!</p>');
+        setTimeout(function () {
+          $('.confirmation-message').fadeOut('slow');
+        }, 10000); // Hide confirmation message after 3 seconds
+      },
+      error: function () {
+        console.error('There was a message processing the contact form data.');
+      }
+    });
+
+    event.preventDefault(); // Prevent the default form submission
   });
 });
 
@@ -42,43 +86,43 @@ $(document).ready(function () {
 let toggleNavStatus = false;
 
 let toggleNav = function () {
-    var $html = $("html");
-    var $navbarMenu = $(".navbar-menu");
-    let getSidebar = document.querySelector(".navbar-menu");
-    let getSidebarUL = document.querySelector(".side-nav ul");
-    let getSidebarLinks = document.querySelectorAll(".side-nav a");
-    let getSidebarVisibility = document.querySelector(".side-nav");
+  var $html = $("html");
+  var $navbarMenu = $(".navbar-menu");
+  let getSidebar = document.querySelector(".navbar-menu");
+  let getSidebarUL = document.querySelector(".side-nav ul");
+  let getSidebarLinks = document.querySelectorAll(".side-nav a");
+  let getSidebarVisibility = document.querySelector(".side-nav");
 
-    if (toggleNavStatus === false) {
+  if (toggleNavStatus === false) {
 
-        getSidebarVisibility.style.visibility = "visible";
-        getSidebar.style.overflow = "visible";
+    getSidebarVisibility.style.visibility = "visible";
+    getSidebar.style.overflow = "visible";
 
-        getSidebarLinks.forEach((item, index) => {
-            console.log(item);
-            item.style.opacity = "1";
-            item.style.visibility = "visible";
-        });
-        getSidebar.style.width = "60%";
-        getSidebar.style.overflow = "visible";
-        $html.addClass("clicked");
-        $navbarMenu.addClass("clicked")
-        toggleNavStatus = true;
-    }
+    getSidebarLinks.forEach((item, index) => {
+      console.log(item);
+      item.style.opacity = "1";
+      item.style.visibility = "visible";
+    });
+    getSidebar.style.width = "60%";
+    getSidebar.style.overflow = "visible";
+    $html.addClass("clicked");
+    $navbarMenu.addClass("clicked")
+    toggleNavStatus = true;
+  }
 
-    else if (toggleNavStatus === true) {
+  else if (toggleNavStatus === true) {
 
-        getSidebarLinks.forEach((item, index) => {
-            item.style.opacity = "0";
-            item.style.transitionDelay = "0s";
-            item.style.visibility = "hidden";
-        });
-        getSidebar.style.overflow = "visible";
-        getSidebar.style.width = "0";
-        $navbarMenu.removeClass("clicked")
-        $html.removeClass("clicked");
-        toggleNavStatus = false;
-    }
+    getSidebarLinks.forEach((item, index) => {
+      item.style.opacity = "0";
+      item.style.transitionDelay = "0s";
+      item.style.visibility = "hidden";
+    });
+    getSidebar.style.overflow = "visible";
+    getSidebar.style.width = "0";
+    $navbarMenu.removeClass("clicked")
+    $html.removeClass("clicked");
+    toggleNavStatus = false;
+  }
 }
 
 /* Modals collected in variables */
