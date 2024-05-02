@@ -912,6 +912,15 @@
         line-height: 15px;
     }
 
+	#footer .call-now-text{
+		color: #fff;
+        text-align: center;
+        font-size: 18px;
+        display: block;
+        margin-top: 20px;
+		margin-bottom: 20px;
+    }
+
     .circle-container {
         position: absolute;
         width: 100%;
