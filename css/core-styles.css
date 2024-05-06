@@ -345,7 +345,7 @@
 	
 	/* Top Mobile Navigation */
 	.mobile-wrapper {
-		height: 70px;
+		height: 90px;
 		-webkit-transition: .3s ease;
 		-o-transition: .3s ease;
 		transition: .3s ease;
@@ -370,6 +370,21 @@
 		z-index: 100;
 		background: #fff;
 	}
+
+	.mobile-logo-container{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.company-phone-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.phone-call-icon{
+		margin-right: 5px;
+	}
 	
 	.hamburger {
 		position: absolute;
@@ -380,8 +395,7 @@
 	/* Navigation Links */
 	
 	.mobile-wrapper img {
-		height: 38px;
-		margin-top: 5px;
+		height: 30px;
 	}
 	
 	.navbar-menu {
@@ -445,6 +459,18 @@
 		border-right: 4px solid var(--primary);
 		color: var(--primary);
 	}
+
+	.phone-number{
+		display: none;
+	}
+
+	.form-title{
+		color: #292929 !important
+	}
+
+	.form-subtitle{
+		color: var(--paragraph-dark) !important;
+	}
 }
 
 /* Ipad Pro */
@@ -458,6 +484,10 @@
         width: 100% !important;
         max-width: 100% !important;
     }
+	.phone-number{
+		display: block;
+		margin-left: 15px;
+	}
 }
 
 /* Tablets */
@@ -470,6 +500,10 @@
     p {
         font-size: 1em;
     }
+	.phone-number{
+		display: block;
+		margin-left: 15px;
+	}
 
 }
 
@@ -516,6 +550,11 @@
 		height: auto;
         width: 220px;
 		top: 40px;
+	}
+
+	.phone-number{
+		display: block;
+		margin-left: 15px;
 	}
 
 	/*navbar */
@@ -859,6 +898,15 @@
         text-decoration: none;
         line-height: 12px;
     }
+
+	#footer .call-now-text{
+		color: #fff;
+        text-align: center;
+        font-size: 18px;
+        display: block;
+        margin-top: 20px;
+		margin-bottom: 20px;
+    }
   }
   
 /* Landscape */
@@ -910,15 +958,6 @@
 
     #footer .credit, #footer .copy {
         line-height: 15px;
-    }
-
-	#footer .call-now-text{
-		color: #fff;
-        text-align: center;
-        font-size: 18px;
-        display: block;
-        margin-top: 20px;
-		margin-bottom: 20px;
     }
 
     .circle-container {
