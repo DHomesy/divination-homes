@@ -70,7 +70,7 @@ $(document).ready(function () {
         $('#contact-form').append('<p class="confirmation-message">Submit Complete! Thanks for giving us the opportunity to help! We will be in touch very soon!</p>');
         setTimeout(function () {
           $('.confirmation-message').fadeOut('slow');
-        }, 10000); // Hide confirmation message after 3 seconds
+        }, 10000);
       },
       error: function () {
         console.error('There was a message processing the contact form data.');
