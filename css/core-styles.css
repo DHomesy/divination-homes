@@ -460,15 +460,19 @@
 		color: var(--primary);
 	}
 
-	.phone-number{
+	.phone-number {
 		display: none;
 	}
 
-	.form-title{
+	.form-title {
 		color: #292929 !important
 	}
 
-	.form-subtitle{
+	.form-subtitle {
+		color: var(--paragraph-dark) !important;
+	}
+
+	.confirmation-message {
 		color: var(--paragraph-dark) !important;
 	}
 }
